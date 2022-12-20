@@ -1,4 +1,4 @@
-import { validate } from "uuid";
+import { v4, validate } from "uuid";
 
 import { User } from "../../../modules/users/model/User";
 
@@ -7,8 +7,10 @@ describe("User model", () => {
     const user = new User();
 
     Object.assign(user, {
+      id: v4(),
       name: "Atlas",
       email: "atlas@fromspace.com",
+      admin: false,
       created_at: new Date(),
       updated_at: new Date(),
     });
